@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM EDIT</title>
+</head>
+<body style="background-color:#212121 ; color:white">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //ADD
+    function addlang(langname){
+        const li= document.createElement('li');
+        li.innerHTML=`${langname}`
+        document.querySelector('.language').appendChild(li)
+    }
+    function addopti(langname){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+    }
+    addlang("python")
+    addopti("golang")
+
+    //EDIT
+    // const secondlang= document.querySelector("li:nth-child(2)")
+    // secondlang.innerHTML="Mojo"
+    // optimised nhi h  innerHTML
+
+    const secondlang= document.querySelector("li:nth-child(2)")
+    const newli=document.createElement('li')
+    newli.textContent="mojo"
+    secondlang.replaceWith(newli)
+
+    const firstlang= document.querySelector("li:first-child")
+    firstlang.outerHTML='<li> Typescript </li>'
+
+
+    //remove
+    
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove()
+
+</script>
+</html'
